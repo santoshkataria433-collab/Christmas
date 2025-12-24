@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>One More Thing 🎄</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #fff6e5;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 95%;
+  max-width: 420px;
+  text-align: center;
+  position: relative;
+}
+
+.step {
+  display: none;
+  animation: fadeUp 0.6s ease;
+}
+
+.step.active { display: block; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.small {
+  color: #ff6fae;
+  font-family: 'Pacifico', cursive;
+}
+
+.card {
+  background: #fffdf7;
+  border-radius: 24px;
+  padding: 22px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+  margin-bottom: 20px;
+}
+
+.hand {
+  font-family: 'Pacifico', cursive;
+  color: #ff5fa2;
+  font-size: 22px;
+}
+
+.note {
+  text-align: left;
+  background: #fffdf2;
+  border-radius: 20px;
+  padding: 20px;
+  line-height: 1.7;
+}
+
+.btn {
+  background: #ff5fa2;
+  color: white;
+  border: none;
+  padding: 14px 24px;
+  font-size: 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  margin: 8px;
+  box-shadow: 0 8px 15px rgba(255,95,162,0.4);
+}
+
+/* 🎅 Santa */
+.santa {
+  font-size: 90px;
+  animation: dance 1s infinite alternate;
+}
+
+@keyframes dance {
+  0% { transform: rotate(-10deg); }
+  100% { transform: rotate(10deg) translateY(-10px); }
+}
+
+/* 💬 Bubble */
+.bubble {
+  background: white;
+  border-radius: 20px;
+  padding: 14px 18px;
+  display: inline-block;
+  margin-top: 10px;
+  font-family: 'Pacifico', cursive;
+  font-size: 20px;
+  color: #ff5fa2;
+}
+
+/* 🐱 GLOBAL DANCING KITTEN */
+.kitten {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  font-size: 55px;
+  animation: kittyDance 1.2s infinite ease-in-out;
+  z-index: 999;
+  cursor: pointer;
+}
+
+@keyframes kittyDance {
+  0% { transform: rotate(0deg) translateY(0); }
+  25% { transform: rotate(-10deg) translateY(-6px); }
+  50% { transform: rotate(10deg) translateY(0); }
+  75% { transform: rotate(-6deg) translateY(-4px); }
+  100% { transform: rotate(0deg) translateY(0); }
+}
+
+/* 🐱 FUN TRICK WHEN CLICKED */
+.kitten.trick {
+  animation: kittySpin 0.8s ease;
+}
+
+@keyframes kittySpin {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(360deg) scale(1.3); }
+  100% { transform: rotate(720deg) scale(1); }
+}
+
+.heart { font-size: 60px; }
+.date { font-size: 14px; color: #555; }
+</style>
+</head>
+
+<body>
+
+<!-- 🐱 KITTEN (VISIBLE ON ALL PAGES) -->
+<div class="kitten" onclick="kittyTrick()">🐱🎄</div>
+
+<div class="container">
+
+<!-- STEP 1 -->
+<div class="step active">
+  <p class="small">the grand finale...</p>
+  <h1>One More Thing</h1>
+  <div class="card">Something small, made with love 💖</div>
+  <button class="btn" onclick="nextStep()">Next ✨</button>
+</div>
+
+<!-- STEP 2 -->
+<div class="step">
+  <div class="card">
+    <div class="santa">🎅💃</div>
+    <div class="bubble">Merry Christmas Swati 🎄❤️</div>
+  </div>
+  <button class="btn" onclick="nextStep()">Next ✨</button>
+</div>
+
+<!-- STEP 3 -->
+<div class="step">
+  <h1 class="hand">My Heart in Words 💓</h1>
+  <div class="card" style="text-align:left">
+    My heart speaks in silent ways 💓<br>
+    Words get lost when you come my way 😌<br>
+    One glance from you, and I’m no longer the same ✨<br><br>
+    Days feel lighter, nights feel warmer 🌙<br>
+    Your smile lives inside my thoughts 😊<br>
+    Every beat whispers your name 💘<br><br>
+    I didn’t plan this love, it just happened 💫<br>
+    Like music playing on its own 🎵<br>
+    Now my heart dances, fearless and free 💃❤️<br><br>
+    If this is madness, let it stay 🤍<br>
+    Because loving you feels like home 🏡💞
+  </div>
+  <button class="btn" onclick="nextStep()">Next 💫</button>
+</div>
+
+<!-- STEP 4 -->
+<div class="step">
+  <div class="note">
+    <h3>Final Thoughts</h3>
+    <p class="hand">Hey love,</p>
+    <p>This Christmas, I just want you to know how much you mean to me.</p>
+    <p>I hope this brought you a little comfort and a smile.</p>
+    <p>This is me, choosing you — this Christmas and always 🎄</p>
+  </div>
+  <button class="btn" onclick="nextStep()">Seal With Love 💌</button>
+</div>
+
+<!-- STEP 5 -->
+<div class="step">
+  <div class="card">
+    <div class="heart">❤️🎁</div>
+    <h2>Sealed With Love</h2>
+    <p>You Matter To Me</p>
+    <p class="hand">Always & Forever ❄️</p>
+    <p class="date">Wednesday 24 December, 2025</p>
+  </div>
+  <button class="btn" onclick="restart()">See Again ✨</button>
+</div>
+
+</div>
+
+<script>
+let current = 0;
+const steps = document.querySelectorAll('.step');
+
+function nextStep() {
+  steps[current].classList.remove('active');
+  current++;
+  steps[current].classList.add('active');
+}
+
+function restart() {
+  steps[current].classList.remove('active');
+  current = 0;
+  steps[current].classList.add('active');
+}
+
+/* 🐱 Kitty Trick */
+function kittyTrick() {
+  const kitty = document.querySelector('.kitten');
+  kitty.classList.add('trick');
+  setTimeout(() => kitty.classList.remove('trick'), 800);
+}
+</script>
+
+</body>
+</html>
+
